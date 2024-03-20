@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input, button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Student Management System</h1>
+
+<div>
+    <label for="choice">Select Action:</label>
+    <select id="choice">
+        <option value="add">Add Student</option>
+        <option value="modify">Modify Student</option>
+        <option value="delete">Delete Student</option>
+        <option value="search">Search Student</option>
+    </select>
+    <button onclick="performAction()">Submit</button>
+</div>
+
+<div id="output"></div>
+
+<script>
+    function performAction() {
+        var choice = document.getElementById("choice").value;
+        var outputDiv = document.getElementById("output");
+        var result;
+
+        switch (choice) {
+            case "add":
+                result = addStudent();
+                break;
+            case "modify":
+                result = modifyStudent();
+                break;
+            case "delete":
+                result = deleteStudent();
+                break;
+            case "search":
+                result = searchStudent();
+                break;
+            default:
+                result = "Invalid choice. Please try again.";
+        }
+
+        outputDiv.innerHTML = result;
+    }
+
+    function addStudent() {
+        var name = prompt("Enter student name:");
+        var id = prompt("Enter student ID:");
+        var age = prompt("Enter student age:");
+
+        // Perform logic to add student (similar to Java code)
+
+        return "Student added successfully!";
+    }
+
+    function modifyStudent() {
+        var id = prompt("Enter student ID to modify:");
+
+        // Perform logic to modify student (similar to Java code)
+
+        return "Student modified successfully!";
+    }
+
+    function deleteStudent() {
+        var id = prompt("Enter student ID to delete:");
+
+        // Perform logic to delete student (similar to Java code)
+
+        return "Student deleted successfully!";
+    }
+
+    function searchStudent() {
+        var id = prompt("Enter student ID to search:");
+
+        // Perform logic to search for student (similar to Java code)
+
+        return "Student found:\nName: John Doe\nID: 123\nAge: 20";
+    }
+</script>
+
+</body>
+</html>
